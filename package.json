@@ -1,18 +1,18 @@
 {
   "name": "hypixel-checker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Checks if anyone has logged into your account and notifies you",
+  "author": "voxal",
+  "main": "src/index.js",
   "scripts": {
-    "start": "electron .",
-    "checker": "node index.js"
+    "start": "electron ."
   },
   "keywords": [],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "js-yaml": "^3.14.0"
   },
   "devDependencies": {
     "electron": "^11.0.3"

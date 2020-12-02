@@ -1,0 +1,13 @@
+# hypixel-checker
+#
+# Checks if anyone has logged into your account and notifies you
+#
+# Github Repository:
+#
+#
+# Change config by entering your username and api key 👇
+
+USERNAME: USERNAME
+API_KEY: API_KEY
+CHECK_FREQUENCY: 5
+NOTIFICATIONS: true
