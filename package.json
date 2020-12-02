@@ -1,0 +1,20 @@
+{
+  "name": "hypixel-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "checker": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "electron": "^11.0.3"
+  }
+}
