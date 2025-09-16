@@ -1,7 +1,7 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
 const INFO = {
-  VERSION_NUMBER: "1.0.0",
+  VERSION_NUMBER: require("../package.json").version,
   VERSION_HASH: (() => {
     try {
       return require("child_process")
@@ -36,7 +36,38 @@ window.onload = () => {
   const path = require("path");
   const { app, BrowserWindow } = require("electron");
   let LAST_KNOWN_LOGIN;
+  let SUCCESS = true;
   createLine({ text: "hypixel-checker", color: "aquamarine" });
+  setTimeout(() => {
+    createLine({
+      text: `version: ${
+        INFO.VERSION_NUMBER
+      } latest commit: ${INFO.VERSION_HASH.slice(0, 7)}`,
+      color: "mediumaquamarine	",
+    });
+  }, 250);
+  axios
+    .get(`https://api.hypixel.net/player`, {
+      params: {
+        key: CONFIG.API_KEY,
+        name: CONFIG.USERNAME,
+      },
+    })
+    .then((res) => {
+      createLine({
+        text: `Successfully connected to ${CONFIG.USERNAME}`,
+        color: "green",
+      });
+      SUCCESS = true;
+    })
+    .catch((err) => {
+      createLine({
+        text: `An error has occured: ${err.response.data.cause}, edit config.yml and restart the app`,
+        color: "red",
+      });
+      SUCCESS = false;
+    });
+  if (!SUCCESS) return;
   setInterval(
     () => {
       axios
@@ -55,7 +86,7 @@ window.onload = () => {
                 body: `Login Detected at ${new Date(
                   lastLogin
                 ).toLocaleString()}`,
-                icon: path.join(__dirname, "./assets/icon.png"),
+                icon: path.join(__dirname, "../assets/icon.png"),
               });
 
             LAST_KNOWN_LOGIN = res.data.player.lastLogin;

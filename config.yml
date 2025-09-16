@@ -7,7 +7,7 @@
 #
 # Change config by entering your username and api key 👇
 
-USERNAME: USERNAME
-API_KEY: API_KEY
-CHECK_FREQUENCY: 5
+USERNAME: voxxal
+API_KEY: 9df00a52-b5c9-4888-8067-cb9de2a9fa22
+CHECK_FREQUENCY: 1
 NOTIFICATIONS: true

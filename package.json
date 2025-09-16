@@ -1,8 +1,9 @@
 {
   "name": "hypixel-checker",
-  "version": "1.0.0",
+  "version": "v1.0.1",
   "description": "Checks if anyone has logged into your account and notifies you",
   "author": "voxal",
+  "repository": "https://github.com/vooxal/hypixel-checker",
   "main": "src/index.js",
   "scripts": {
     "start": "electron ."
@@ -16,5 +17,8 @@
   },
   "devDependencies": {
     "electron": "^11.0.3"
+  },
+  "bin": {
+    "hypixel-checker": "./bin/hypixel-checker.js"
   }
 }
